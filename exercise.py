@@ -268,17 +268,85 @@ Write a Python program to find all words starting with 'a' or 'e' in a given str
 Write a Python program to separate and print the numbers and their position in a given string.
 """
 
-text = 'The marathon had 26.2 miles, and by mile 18, I felt the weight of every step.'
+# text = 'The marathon had 26.2 miles, and by mile 18, I felt the weight of every step.'
 
-pattern = r'\d+'
+# pattern = r'\d+'
 
-sepa = re.split(pattern, text)
+# sepa = re.split(pattern, text)
 
-match = re.findall(pattern, text)
+# match = re.findall(pattern, text)
 
-print(f'The numbers are separated like : {sepa}')
+# print(f'The numbers are separated like : {sepa}')
 
-if match:
-    for i in re.finditer(pattern, text):
+# if match:
+#     for i in re.finditer(pattern, text):
         
-        print(f'The separated numbers are :{i.group()} and the position was at {i.start()} to {i.end()} ')
+#         print(f'The separated numbers are :{i.group()} and the position was at {i.start()} to {i.end()} ')
+        
+
+"""Task 14.
+Write a Python program to abbreviate 'Road' as 'Rd.' in a given string.
+"""
+
+# def abbreviate():
+    
+#     # text = 'On our family trip, we took the Old Forest Road, which led us through some enchanting landscapes.'
+#     # text = 'During our cross-country drive, we traversed the Pacific Coast Road, the Rocky Road, and finally the famous Route 66 Road'
+    
+#     text = input("Enter any text containing the word 'Road' to convert as Rd: ")
+    
+#     pattern = r'Road'
+    
+#     match = re.findall(pattern, text)
+#     results = []
+#     if match:
+#         pattern2 = r'Rd.'
+#         replace = re.sub(pattern, pattern2, text )
+        
+#         for i in re.finditer(pattern2, replace):
+            
+        
+#             result = f'The word "Road" is abbreviated as "{i.group()}".\nthe position of the modified word is at {i.start()} to {i.end()}'
+#             results.append(result)
+        
+#         return replace, "\n\n".join(results)
+            
+#     else :
+#         return 'There is not match.'
+    
+# modified_text, abbreviations = abbreviate()
+
+# print('-'* 40)
+# print(f'The modified_text : {modified_text}')
+# print('-'* 40)
+# print(abbreviations)
+
+# """Task 15.
+# Write a Python program to replace all occurrences of a space, comma, or dot with a colon.
+# """
+# def replacer():
+    
+#     text = input('Enter any text to replace space, comma, or dot with a colon: ')
+    
+#     pattern = r'[\s,\.]'
+    
+#     replace = re.sub(pattern, r':', text)
+    
+#     return replace
+
+# print(replacer())
+
+"""Task 16.
+Write a Python program to replace maximum 2 occurrences of space, comma, or dot with a colon."""
+
+def replacer():
+    
+    text = input('Enter any text to replace space, comma, or dot with a colon: ')
+    
+    pattern = r'[\s,\.]{2}'
+    
+    replace = re.sub(pattern, r':', text)
+    
+    return replace
+
+print(replacer())
