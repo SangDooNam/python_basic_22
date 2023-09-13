@@ -5,7 +5,7 @@ Write a Python program to check for a number at the end of a string."""
 
 # text = input('Enter any text: ')
 
-# pattern = r'\w+\d$'
+# pattern = r'\w+\d+$'  # r'd+$'
 
 # match = re.search(pattern, text)
 # every = re.findall(pattern, text)
@@ -23,7 +23,7 @@ Exercises number 1, 12, 13, and 345 are important"""
 
 # text = ('Exercises number 1, 12, 13, and 345 are important')
 
-# pattern = r'[0-9]{1,3}'
+# pattern = r'[0-9]{1,3}' # \d{1,3}
 
 # # pattern = r'(34[0-5]|3[0-3][0-9]|[012]?[0-9][0-9]?)'
 
@@ -67,7 +67,7 @@ Sample text : 'The quick brown fox jumps over the lazy dog.' Searched words : 'f
 
 # match = re.search(pattern, text)
 
-# print(match)
+# print(match) # print(match.span()) # print(match.start(), match.end())
 
 
 """Task 5. 
@@ -111,6 +111,8 @@ Write a Python program to find the occurrence and position of substrings within 
 #         print(f"'{i.group()}' is matched at the porint {i.start()} to {i.end()}")
 
 # print(match)
+
+
 
 
 """Task 7.
@@ -339,14 +341,26 @@ Write a Python program to abbreviate 'Road' as 'Rd.' in a given string.
 """Task 16.
 Write a Python program to replace maximum 2 occurrences of space, comma, or dot with a colon."""
 
-def replacer():
+# def replacer():
     
-    text = input('Enter any text to replace space, comma, or dot with a colon: ')
+#     text = input('Enter any text to replace space, comma, or dot with a colon: ')
     
-    pattern = r'[\s,\.]{2}'
+#     pattern = r'[\s,\.]{2}'
     
-    replace = re.sub(pattern, r':', text)
+#     replace = re.sub(pattern, r':', text)
+    
+#     return replace
+
+# print(replacer())
+
+def max_two ():
+    
+    text = input('Enter any text to replace space, comma, or dot with a colon:')
+    
+    pattern = r'[\s,\.]'
+    
+    replace = re.subn(pattern, r':', text, count= 2)
     
     return replace
 
-print(replacer())
+print(max_two())
